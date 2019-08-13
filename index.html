@@ -3,10 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif,
+        }
+
+        li {
+            clear: both;
+            margin-top: 20px;
+        }
+
+        img {
+            width:  80px;
+            float: left;
+            margin-right: 10px
+        }
+        p {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
-    <button id="novotodo">Adicionar</button>
-    
+    <form id="repo-form">
+        <input type="text" name="repository">
+        <button type="submit">Adicionar</button>
+    </form>
+    <ul id="repo-list">
+        <li>
+            <img src="https://miro.medium.com/max/766/1*co_1qORNdM0PI1nvCp7Iig.png"/>
+        </li>
+        <strong>wiliandasilva.com.br</strong>
+        <p>Curso ES6</p>
+        <a></a>
+    </ul>
     <script src="./bundle.js"></script>
 </body>
 </html>

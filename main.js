@@ -1,29 +1,27 @@
-class List {
-    constructor(){
-        this.data = [];
+class App {
+    constructor() {
+        this.repositories = [];
+
+        this.formEl = document.getElementById('repo-form')
+
+        this.registerHandlers();
     }
-    add(data) {
-        this.data.push(data)
-        console.log(this.data)
+
+    registerHandlers(){
+        this.formEl.onsubmit = (event) => this.addRepository(event)
+    }
+
+    addRepository(event){
+        event.preventDefault();
+
+        this.repositories.push({
+            name: '',
+            description: "http://wilian.com.br",
+            avatar_url: "www.con.br"
+        })
+
+        console.log(this.repositories)
     }
 }
 
-class TodoList extends List{
-    constructor(){
-        super();
-
-        this.usuario = 'Wilian';
-    }
-
-    mostraUsuario () {
-        console.log(this.usuario)
-    }
-}
-
-const MinhaLista = new TodoList();
-
-document.getElementById('novotodo').onclick = () => {
-    MinhaLista.add('Novo todo');
-}
-
-MinhaLista.mostraUsuario();
+new App()
