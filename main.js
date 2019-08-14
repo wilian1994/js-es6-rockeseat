@@ -19,8 +19,32 @@ class App {
             description: "http://wilian.com.br",
             avatar_url: "www.con.br"
         })
+        this.render()
+    }
 
-        console.log(this.repositories)
+    render(){
+        this.listEl.innerHtml = ''
+
+        this.repositories.forEach(repo => {
+            let imgEl = document.createElement('img')
+            imgEl.setAttribute('src', repo.avatar_url);
+
+            let titleEl = document.createElement('strong')
+            titleEl.appendChild(document.createTextNode(repo.name))
+
+            let descriptionEl = document.createElement('p')
+            descriptionEl.appendChild(document.createTextNode(repo.description))
+
+            let linkEl = document.createElement('a');
+            linkEl.setAttribute('target', '_blank');
+            linkEl.appendChild(document.createTextNode('Acessar'))
+
+            let listItemEl = document.createElement('li')
+            listItemEl.appendChild(imgEl)
+            listItemEl.appendChild(titleEl)
+            listItemEl.appendChild(descriptionEl)
+            listItemEl.appendChild(linkEl)
+        })
     }
 }
 
